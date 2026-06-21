@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>乐鱼体育 · 知识素材库</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Noto Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif;
+            background: #f9f6f1;
+            color: #2e2a26;
+            line-height: 1.7;
+            padding: 2rem 1.25rem;
+        }
+        .wrap {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: #fffcf9;
+            padding: 2.5rem 2rem;
+            border-radius: 28px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.03), 0 0 0 1px #ede7df;
+        }
+        h1 {
+            font-size: 2.2rem;
+            font-weight: 500;
+            letter-spacing: -0.02em;
+            margin-bottom: 0.25rem;
+            color: #1f1b17;
+        }
+        .subhead {
+            font-size: 1rem;
+            color: #7a7168;
+            border-bottom: 1px solid #e6ddd3;
+            padding-bottom: 1.5rem;
+            margin-bottom: 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+        .subhead span {
+            font-size: 0.85rem;
+            background: #f0ebe4;
+            padding: 0.2rem 1rem;
+            border-radius: 40px;
+            color: #4f4840;
+        }
+        .section-title {
+            font-size: 1.35rem;
+            font-weight: 500;
+            border-left: 5px solid #c7b7a6;
+            padding-left: 1rem;
+            margin: 2.5rem 0 1rem 0;
+            color: #2d2721;
+        }
+        .section-title:first-of-type {
+            margin-top: 0.5rem;
+        }
+        .intro-card {
+            background: #f6f1ea;
+            border-radius: 20px;
+            padding: 1.8rem 2rem;
+            margin: 1rem 0 1.8rem 0;
+            border: 1px solid #e3d9ce;
+        }
+        .intro-card p {
+            margin-bottom: 0.75rem;
+        }
+        .intro-card p:last-child {
+            margin-bottom: 0;
+        }
+        .tag-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin: 1.5rem 0 2rem 0;
+        }
+        .tag-item {
+            background: white;
+            border-radius: 16px;
+            padding: 1.2rem 1.4rem;
+            border: 1px solid #e9e0d6;
+            transition: all 0.2s ease;
+        }
+        .tag-item:hover {
+            border-color: #bfafa0;
+            background: #fcf9f6;
+            box-shadow: 0 6px 12px rgba(0,0,0,0.02);
+        }
+        .tag-item h3 {
+            font-size: 1.1rem;
+            font-weight: 500;
+            color: #2d2721;
+            margin-bottom: 0.35rem;
+        }
+        .tag-item p {
+            font-size: 0.92rem;
+            color: #5f564e;
+        }
+        .insight-box {
+            background: #f2ede6;
+            border-left: 6px solid #b8a695;
+            padding: 1.2rem 1.8rem;
+            border-radius: 0 18px 18px 0;
+            margin: 2rem 0;
+        }
+        .insight-box p {
+            font-style: normal;
+            color: #3b352f;
+        }
+        .insight-box strong {
+            color: #1f1b17;
+        }
+        .callout {
+            background: #eae3d9;
+            border-radius: 20px;
+            padding: 1.6rem 2rem;
+            margin: 2.2rem 0;
+            border: 1px solid #dacfc2;
+        }
+        .callout p {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.8rem;
+        }
+        .callout-icon {
+            font-size: 1.5rem;
+            line-height: 1;
+        }
+        .faq-mini {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.2rem 2rem;
+            margin: 1.8rem 0 1rem 0;
+        }
+        .faq-mini dt {
+            font-weight: 500;
+            color: #2d2721;
+            margin-bottom: 0.1rem;
+        }
+        .faq-mini dd {
+            font-size: 0.92rem;
+            color: #5a5149;
+            margin-bottom: 0.5rem;
+        }
+        .footer-note {
+            border-top: 1px solid #e6ddd3;
+            padding-top: 1.8rem;
+            margin-top: 2.5rem;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            gap: 1rem;
+            font-size: 0.9rem;
+            color: #736b62;
+        }
+        .footer-note a {
+            color: #3f3730;
+            text-decoration: none;
+            font-weight: 500;
+            border-bottom: 1px dotted #b8a695;
+            transition: border 0.15s;
+        }
+        .footer-note a:hover {
+            border-bottom: 2px solid #8f7e6d;
+        }
+        hr {
+            border: none;
+            border-top: 1px dashed #ddd3c8;
+            margin: 2rem 0;
+        }
+        @media (max-width: 650px) {
+            body { padding: 1rem 0.6rem; }
+            .wrap { padding: 1.8rem 1.2rem; }
+            h1 { font-size: 1.8rem; }
+            .faq-mini { grid-template-columns: 1fr; }
+            .tag-grid { grid-template-columns: 1fr; }
+            .subhead { flex-direction: column; align-items: flex-start; }
+        }
+    </style>
+</head>
+<body>
+<div class="wrap">
+
+    <h1>乐鱼体育 · 知识索引</h1>
+    <div class="subhead">
+        <span>主题素材 · 内容框架</span>
+        <span>运动 · 竞技 · 体验</span>
+    </div>
+
+    <!-- 说明区 -->
+    <div class="section-title">📘 关于这个集合</div>
+    <div class="intro-card">
+        <p>这里整理的是围绕「乐鱼体育」这一关键词延展出的信息节点：从运动种类、训练常识，到场地器材与休闲场景。内容偏向实用，适合作为日常参考或主题阅读的起点。</p>
+        <p>如果你正在寻找一个更具体的平台入口，可以了解一下 <a href="https://official-index-leyu.com.cn" style="color:#3f3730; font-weight:500; border-bottom:1px dotted #b8a695; text-decoration:none;">乐鱼体育</a> 所涵盖的资讯与活动方向。本站不提供跳转服务，仅作为知识背景介绍。</p>
+    </div>
+
+    <!-- 目录感：网格区 -->
+    <div class="section-title">📂 常见知识模块</div>
+    <div class="tag-grid">
+        <div class="tag-item">
+            <h3>⚽ 球类运动</h3>
+            <p>足球、篮球、排球、羽毛球、乒乓球——基础规则、装备建议与常见训练误区。</p>
+        </div>
+        <div class="tag-item">
+            <h3>🏊 水上 & 户外</h3>
+            <p>游泳、划船、骑行、徒步。不同季节的体能分配与安全注意事项。</p>
+        </div>
+        <div class="tag-item">
+            <h3>🏋️ 体能训练</h3>
+            <p>核心力量、柔韧性、心肺耐力。家庭健身与场地训练的简单方案。</p>
+        </div>
+        <div class="tag-item">
+            <h3>📋 赛事与活动</h3>
+            <p>业余联赛、社区赛、主题运动日。如何报名、观赛礼仪与基础组织思路。</p>
+        </div>
+    </div>
+
+    <!-- 提示区 / 引用块 -->
+    <div class="insight-box">
+        <p><strong>💡 日常小提示</strong> —— 运动前动态拉伸 5~8 分钟，比静态拉伸更适合激活肌肉；运动后补充水分和适量蛋白质，帮助身体恢复。保持节奏比单次强度更重要。</p>
+    </div>
+
+    <!-- 相关信息区 + 场景 -->
+    <div class="section-title">🌿 场景与氛围</div>
+    <div class="callout">
+        <p>
+            <span class="callout-icon">📌</span>
+            <span>无论你是刚开始接触某项运动，还是想为团队寻找合适的活动方案，了解不同项目的特性都是第一步。比如室内球类对地面缓冲要求高，户外活动则需更关注天气与补给。把这些细节纳入计划，体验会更顺畅。</span>
+        </p>
+    </div>
+
+    <!-- FAQ 摘要 -->
+    <div class="section-title">❓ 常见疑问片段</div>
+    <dl class="faq-mini">
+        <dt>初学者先练什么比较好？</dt>
+        <dd>从低强度、有明确规则的项目开始（如乒乓球、羽毛球），容易获得正反馈。同时搭配基础体能，减少受伤风险。</dd>
+        <dt>怎样找到合适的运动伙伴？</dt>
+        <dd>社区运动群、本地体育俱乐部、公司兴趣小组都是不错的渠道。也可以从个人练习开始，慢慢拓展。</dd>
+        <dt>运动后肌肉酸痛怎么办？</dt>
+        <dd>轻度酸痛可进行低强度拉伸或散步，配合充足睡眠。如果持续疼痛或影响动作，建议休息并咨询专业人士。</dd>
+        <dt>需要很专业的装备吗？</dt>
+        <dd>入门阶段选择合身、安全的入门款即可。随着水平提升再逐步升级装备，不必一开始就追求顶级。</dd>
+    </dl>
+
+    <hr>
+
+    <!-- 更自然的链接 + 简短结语 -->
+    <div style="margin-bottom:0.8rem; font-size:0.95rem; color:#4f4840;">
+        如果你希望进一步探索与运动相关的资讯、活动或社区内容，<a href="https://official-index-leyu.com.cn" style="color:#3f3730; font-weight:500; border-bottom:1px dotted #b8a695; text-decoration:none;">乐鱼体育</a> 提供了一些围绕运动生活的信息聚合。不妨将它作为一个参考坐标。
+    </div>
+
+    <div class="footer-note">
+        <span>内容仅供参考 · 具体运动请根据实际情况安排</span>
+        <span>✦ 保持好奇，动起来就是收获</span>
+    </div>
+
+</div>
+</body>
+</html>
